@@ -1,11 +1,25 @@
+// fn main() {
+//     // move s1 into s2
+//     // let s1 = String::from("hello");
+//     // let s2 = s1;
+
+//     // clone s1 into s2
+//     let s1 = String::from("hello");
+//     let s2 = s1.clone();
+
+//     println!("s1 = {}, s2 = {}", s1, s2);
+// }
 fn main() {
-    // move s1 into s2
-    // let s1 = String::from("hello");
-    // let s2 = s1;
-
-    // clone s1 into s2
     let s1 = String::from("hello");
-    let s2 = s1.clone();
 
-    println!("s1 = {}, s2 = {}", s1, s2);
+    let (s2, len) = calculate_length(s1);
+
+    println!("The length of '{}' is {}.", s2, len);
 }
+
+fn calculate_length(s: String) -> (String, usize) {
+    let length = s.len(); // len() returns the length of a String
+
+    (s, length)
+}
+
