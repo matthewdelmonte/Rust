@@ -1,6 +1,5 @@
 // the Rectangle struct has two fields: height and width. 
 
-
 #[derive(Debug)]
 struct Rectangle {
     height: u32,
