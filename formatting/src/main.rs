@@ -47,8 +47,6 @@ fn main() {
         Color { red: 0, green: 3, blue: 254 },
         Color { red: 0, green: 0, blue: 0 },
     ].iter() {
-        // Switch this to use {} once you've added an implementation
-        // for fmt::Display.
         println!("{}", *color);
     }
 }
