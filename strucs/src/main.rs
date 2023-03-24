@@ -1,4 +1,5 @@
 // the Rectangle struct has two fields: height and width. 
+#![allow(dead_code)]
 
 #[derive(Debug)]
 struct Rectangle {
@@ -42,53 +43,66 @@ struct User {
     sign_in_count: u64
 }
 
-fn main() {
-    let scale = 2;
-    let rect = Rectangle::new(10, 5);
-    let rect2 = Rectangle {
-        height: dbg!(10 * scale),
-        width: 5
-    };
-
-    if rect.width() && rect.height() {
-        println!("Area: {}", rect.get_area());
-    } else {
-        println!("You entered a height of {} and a width of {}. Both values must be greater than zero to calculate the area of a rectangle.", rect.height, rect.width);
-    }
-
-    println!("Perimeter: {}", rect.get_perimeter());
-    dbg!(&rect);
-
-    let user1: User = User {
-        email: String::from("matthew@twitter.com"),
-        username: String::from("matthewd"),
-        sign_in_count: 1,
-        active: true
-    };
-
-    println!("user1: {:#?}", user1);
-
-    let user2: User = build_user(
-        String::from("caleb@twitter.com"),
-        String::from("calebd"),
-    );
-
-    println!("user2 {:#?}", user2);
-
-    let user3: User = User {
-        email: String::from("fastmonkey@twitter.com"),
-        username: String::from("calebd"),
-        ..user1
-    };
-
-    println!("user3 {:#?}", user3);
+struct Pair {
+    x: i32,
+    y: f32
 }
 
-fn build_user(email: String, username: String) -> User {
-    User {
-        email,
-        username,
-        active: true,
-        sign_in_count: 1
-    }
+fn main() {
+    // instantiate a tuple struct
+    let pair = Pair { x: 1, y: 0.1 };
+    println!("pair contains {:?} and {:?}", pair.x, pair.y);
+    
+    // destructure a tuple struct
+    let Pair { x: x1, y: y1 } = pair;
+    println!("pair contains {:?} and {:?}", x1, y1);
+
+//     let scale = 2;
+//     let rect = Rectangle::new(10, 5);
+//     let _rect2 = Rectangle {
+//         height: dbg!(10 * scale),
+//         width: 5
+//     };
+
+//     if rect.width() && rect.height() {
+//         println!("Area: {}", rect.get_area());
+//     } else {
+//         println!("You entered a height of {} and a width of {}. Both values must be greater than zero to calculate the area of a rectangle.", rect.height, rect.width);
+//     }
+
+//     println!("Perimeter: {}", rect.get_perimeter());
+//     dbg!(&rect);
+
+//     let user1: User = User {
+//         email: String::from("matthew@twitter.com"),
+//         username: String::from("matthewd"),
+//         sign_in_count: 1,
+//         active: true
+//     };
+
+//     println!("user1: {:#?}", user1);
+
+//     let user2: User = build_user(
+//         String::from("caleb@twitter.com"),
+//         String::from("calebd"),
+//     );
+
+//     println!("user2 {:#?}", user2);
+
+//     let user3: User = User {
+//         email: String::from("fastmonkey@twitter.com"),
+//         username: String::from("calebd"),
+//         ..user1
+//     };
+
+//     println!("user3 {:#?}", user3);
+// }
+
+// fn build_user(email: String, username: String) -> User {
+//     User {
+//         email,
+//         username,
+//         active: true,
+//         sign_in_count: 1
+//     }
 }
