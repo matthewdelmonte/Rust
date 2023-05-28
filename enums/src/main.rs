@@ -14,6 +14,13 @@ enum Coin {
     Quarter(States),
 }
 
+enum Bill {
+    One,
+    Five,
+    Ten,
+    Twenty,
+}
+
 fn value_in_cents(coin: Coin) -> u8 {
     match coin {
         Coin::Penny => 1,
@@ -26,7 +33,17 @@ fn value_in_cents(coin: Coin) -> u8 {
     }
 }
 
+fn value_in_dollars(bill: Bill) -> u8{
+    match bill {
+        Bill::One => 1,
+        Bill::Five => 5,
+        Bill::Ten => 10,
+        Bill::Twenty => 20
+    }
+}
+
 fn main() {
     // value_in_cents(Coin::Quarter(UsState::Connecticut));
     println!("Coins value = {} cents.", value_in_cents(Coin::Quarter(States::Nevada)));
+    println!("Bills value = {} dollars.", value_in_dollars(Bill::Twenty));
 }
